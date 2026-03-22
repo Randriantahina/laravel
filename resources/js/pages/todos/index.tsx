@@ -44,10 +44,8 @@ function CreateTodoDialog() {
                 </DialogHeader>
                 <Form
                     {...TodoController.store.form()}
-                    options={{
-                        preserveScroll: true,
-                        onSuccess: () => setOpen(false),
-                    }}
+                    options={{ preserveScroll: true }}
+                    onSuccess={() => setOpen(false)}
                     className="space-y-4"
                 >
                     {({ processing, errors }) => (
@@ -108,10 +106,8 @@ function EditTodoDialog({ todo }: { todo: Todo }) {
                 </DialogHeader>
                 <Form
                     {...TodoController.update.form(todo.id)}
-                    options={{
-                        preserveScroll: true,
-                        onSuccess: () => setOpen(false),
-                    }}
+                    options={{ preserveScroll: true }}
+                    onSuccess={() => setOpen(false)}
                     className="space-y-4"
                 >
                     {({ processing, errors }) => (
